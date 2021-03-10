@@ -19,6 +19,8 @@ jobs:
         DIDI_CITY: ${{ secrets.DIDI_CITY}}
         DIDI_TOKEN: ${{ secrets.DIDI_TOKEN }}
         DIDI: ${{ secrets.DIDI }}
+        user_token: ${{ secrets.user_token }}
+        token: ${{ secrets.token }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 10.x
@@ -33,7 +35,11 @@ jobs:
         run: |
           node DiDi.js
         env:
+          DIDI_CITY: ${{ secrets.DIDI_CITY}}
+          DIDI_TOKEN: ${{ secrets.DIDI_TOKEN }}
           DIDI: ${{ secrets.DIDI }}
+          user_token: ${{ secrets.user_token }}
+          token: ${{ secrets.token }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
